@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerExam02 : MonoBehaviour
 {
     public float jumpForce;
     public float gravityModifier;
@@ -13,12 +13,15 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private InputAction jumpAction;
-    private bool isOnGround = true;
+    //private bool isOnGround = true;
 
     private Animator playerAnim;
     private AudioSource playerAudio;
 
     public bool gameOver = false;
+
+    private int jumpCount = 0;
+    private int maxJump = 2;
 
     void Awake()
     {
@@ -40,10 +43,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (jumpAction.triggered && isOnGround && !gameOver)
+        if (jumpAction.triggered && jumpCount < maxJump && !gameOver)
         {
             rb.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
-            isOnGround = false;
+            jumpCount++;
+            //isOnGround = false;
+
             playerAnim.SetTrigger("Jump_trig");
             dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSfx);
@@ -54,7 +59,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isOnGround = true;
+            //isOnGround = true;
+            jumpCount = 0;
             dirtParticle.Play();
         }
         else if (collision.gameObject.CompareTag("Obstacle"))

@@ -6,11 +6,11 @@ public class MoveLeft : MonoBehaviour
 
     private float leftBound = -15;
 
-    private PlayerController playerController;
+    private PlayerControllerExam02 playerController;
 
     void Start()
     {
-        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerControllerExam02>();
     }
 
     // Update is called once per frame
