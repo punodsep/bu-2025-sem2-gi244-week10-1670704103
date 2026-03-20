@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 433685670295184222}
   - component: {fileID: 5716583634955475133}
   - component: {fileID: 5256051093047304093}
-  - component: {fileID: 8522576366028466313}
+  - component: {fileID: 3629171690225883079}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Obstacle
@@ -64,6 +64,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,9 +87,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &5716583634955475133
 Rigidbody:
@@ -96,10 +100,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5842114324701935107}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -137,7 +141,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.94652724, y: 1.3434764, z: 0.9465271}
   m_Center: {x: -0.000000044703484, y: 0.6717382, z: 0}
---- !u!114 &8522576366028466313
+--- !u!114 &3629171690225883079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5842114324701935107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3deb3c3f12d4b4c47afac0cc51e7dd31, type: 3}
+  m_Script: {fileID: 11500000, guid: 76b04e8a7f5d5c144b1160c7ccae120a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
+  m_EditorClassIdentifier: Assembly-CSharp::MoveLeftExam03
+  speed: 5

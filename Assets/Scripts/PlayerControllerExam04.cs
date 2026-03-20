@@ -1,0 +1,99 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerControllerExam04 : MonoBehaviour
+{
+    public float jumpForce;
+    public float gravityModifier;
+    public ParticleSystem explosionParticle;
+    public ParticleSystem hitParticle;
+    public ParticleSystem dirtParticle;
+
+    public AudioClip jumpSfx;
+    public AudioClip crashSfx;
+
+    private Rigidbody rb;
+    private InputAction jumpAction;
+    //private bool isOnGround = true;
+
+    private Animator playerAnim;
+    private AudioSource playerAudio;
+
+    public bool gameOver = false;
+
+    private int jumpCount = 0;
+    private int maxJump = 2;
+
+    public bool isDash = false;
+
+    public int hp = 3;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        Physics.gravity *= gravityModifier;
+
+        jumpAction = InputSystem.actions.FindAction("Jump");
+
+        gameOver = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (jumpAction.triggered && jumpCount < maxJump && !gameOver)
+        {
+            rb.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
+            jumpCount++;
+            //isOnGround = false;
+
+            playerAnim.SetTrigger("Jump_trig");
+            dirtParticle.Stop();
+            playerAudio.PlayOneShot(jumpSfx);
+        }
+
+        isDash = Keyboard.current.leftShiftKey.isPressed;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            //isOnGround = true;
+            jumpCount = 0;
+            dirtParticle.Play();
+        }
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            jumpCount = 0;
+            hp--;
+            Destroy(collision.gameObject);
+
+            if (hp > 0)
+            {
+                hitParticle.Clear();
+                hitParticle.Play();
+                playerAudio.PlayOneShot(crashSfx);
+            }
+            else
+            {
+                Debug.Log("Game Over!");
+                gameOver = true;
+
+                explosionParticle.Play();
+                dirtParticle.Stop();
+                playerAudio.PlayOneShot(crashSfx);
+                playerAnim.SetBool("Death_b", true);
+                playerAnim.SetInteger("DeathType_int", 1);
+            }
+        }
+    }
+
+}

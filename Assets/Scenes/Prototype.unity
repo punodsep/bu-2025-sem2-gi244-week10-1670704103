@@ -337,35 +337,16 @@ PrefabInstance:
       addedObject: {fileID: 383521443}
     - targetCorrespondingSourceObject: {fileID: 100046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 383521442}
+      addedObject: {fileID: 383521447}
     - targetCorrespondingSourceObject: {fileID: 100046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 383521447}
+      addedObject: {fileID: 383521449}
   m_SourcePrefab: {fileID: 100100000, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
 --- !u!1 &383521441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
   m_PrefabInstance: {fileID: 298473963}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &383521442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383521441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87059482b0c430644882ce49333b5982, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 10
-  gravityModifier: 2
-  explosionParticle: {fileID: 810715825}
-  dirtParticle: {fileID: 1120688231}
-  jumpSfx: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
-  crashSfx: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
-  gameOver: 0
 --- !u!65 &383521443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -516,6 +497,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &383521449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383521441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891a916f661d0e247a3c921c708a19ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControllerExam04
+  jumpForce: 10
+  gravityModifier: 2
+  explosionParticle: {fileID: 810715825}
+  hitParticle: {fileID: 810715825}
+  dirtParticle: {fileID: 1120688231}
+  jumpSfx: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
+  crashSfx: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
+  gameOver: 0
+  isDash: 0
+  hp: 3
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,8 +791,8 @@ GameObject:
   - component: {fileID: 835818921}
   - component: {fileID: 835818920}
   - component: {fileID: 835818922}
-  - component: {fileID: 835818923}
   - component: {fileID: 835818924}
+  - component: {fileID: 835818925}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -883,19 +886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03f4091acf475c418dc56ec925b417b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &835818923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835818919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3deb3c3f12d4b4c47afac0cc51e7dd31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!65 &835818924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -917,6 +907,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 112.79999, y: 18.836718, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &835818925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835818919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b04e8a7f5d5c144b1160c7ccae120a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveLeftExam03
+  speed: 5
 --- !u!4 &1120688229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1419152992, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}

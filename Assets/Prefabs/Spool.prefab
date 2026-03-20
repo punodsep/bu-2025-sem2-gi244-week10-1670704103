@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4517226070152162500}
   - component: {fileID: 6992743974631487463}
   - component: {fileID: 4102039764408610619}
-  - component: {fileID: 2059688569362673965}
+  - component: {fileID: 2779203378496554772}
   m_Layer: 0
   m_Name: Spool
   m_TagString: Obstacle
@@ -141,7 +141,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3226004, y: 2.1209922, z: 2.3226004}
   m_Center: {x: 0, y: 1.0604961, z: 0}
---- !u!114 &2059688569362673965
+--- !u!114 &2779203378496554772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3851402224896496958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3deb3c3f12d4b4c47afac0cc51e7dd31, type: 3}
+  m_Script: {fileID: 11500000, guid: 76b04e8a7f5d5c144b1160c7ccae120a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoveLeft
-  speed: 10
+  m_EditorClassIdentifier: Assembly-CSharp::MoveLeftExam03
+  speed: 5

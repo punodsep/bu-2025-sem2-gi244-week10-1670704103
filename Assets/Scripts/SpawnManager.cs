@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     public float startDelay = 2;
     public float repeatRate = 2;
 
-    private PlayerControllerExam02 playerController;
+    private PlayerControllerExam04 playerController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,11 +17,13 @@ public class SpawnManager : MonoBehaviour
 
         InvokeRepeating(nameof(SpawnObstacle), startDelay, repeatRate);
 
-        playerController = GameObject.Find("Player").GetComponent<PlayerControllerExam02>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerControllerExam04>();
     }
 
     void SpawnObstacle()
     {
+        if (playerController.gameOver) return;
+
         int i = Random.Range(0, obstaclePrefab.Length);
         Instantiate(obstaclePrefab[i], spawnPos, obstaclePrefab[i].transform.rotation);
     }

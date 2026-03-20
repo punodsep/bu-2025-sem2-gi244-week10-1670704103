@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7993111026179431403}
   - component: {fileID: 5563889148629649870}
   - component: {fileID: 3905649935075332930}
-  - component: {fileID: 4557694672998442999}
+  - component: {fileID: -7655976803346569911}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Obstacle
@@ -141,7 +141,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.554324, y: 1.5543231, z: 1.5543228}
   m_Center: {x: 0, y: 0.77716154, z: 0}
---- !u!114 &4557694672998442999
+--- !u!114 &-7655976803346569911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1925636900666362965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3deb3c3f12d4b4c47afac0cc51e7dd31, type: 3}
+  m_Script: {fileID: 11500000, guid: 76b04e8a7f5d5c144b1160c7ccae120a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoveLeft
-  speed: 10
+  m_EditorClassIdentifier: Assembly-CSharp::MoveLeftExam03
+  speed: 5
